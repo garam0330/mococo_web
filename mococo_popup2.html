@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "배달의민족 주아";
+            background-color: #E0F7EC;
+            margin: 0;
+            padding: 10px;
+        }
+
+        header {
+            background-color: greenyellow;
+            padding: 20px;
+            overflow: hidden;
+        }
+
+        .logo {
+            float: left;
+            font-size: 30px;
+            color: black;
+        }
+
+        nav {
+            float: right;
+        }
+
+        nav a {
+            display: inline-block;
+            color: black;
+            font-size: 18px;
+            text-decoration: none;
+            padding: 10px 20px;
+            margin: 0 5px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        nav a:hover {
+            background-color: #DFF5DF;
+        }
+
+        .content {
+            overflow: hidden;
+            background-color: #E0F7EC;
+        }
+
+        aside {
+            float: left;
+            width: 200px;
+            background-color: #4CAF50;
+            padding: 20px;
+            color: white;
+        }
+
+        aside h2 {
+            font-size: 20px;
+            margin-bottom: 40px;
+            font-weight: normal;
+        }
+
+        aside ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        aside ul li {
+            margin-bottom: 15px;
+        }
+
+        aside ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 16px;
+            display: block;
+            padding: 8px 10px;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+
+        aside ul li a:hover {
+            background-color: #45a049;
+        }
+
+        .main {
+            float: right;
+            width: calc(100% - 200px);
+            background-color: #f0fff8;
+            padding: 40px;
+        }
+
+        .main, aside {
+            min-height: 1300px;
+        }
+
+        .main h1 {
+            font-weight: normal;
+        }
+
+        .main h2 {
+            font-weight: normal;
+            font-size: 26px;
+            margin-top: 30px;
+        }
+
+        .photo-album {
+            margin-bottom: 10px;
+        }
+
+        .photo-box {
+            float: left;
+            width: 23%;
+            aspect-ratio: 1 / 1;
+            margin: 1.0%;
+            padding: 0;
+            background-color: transparent;
+            border-radius: 12px;
+            transition: transform 0.3s;
+            transform-origin: center center;
+        }
+
+        .photo-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            border: none;
+            margin: 0;
+            padding: 0;
+            border-radius: 12px;
+        }
+
+
+        .photo-box:hover {
+            transform: scale(1.05);
+        }
+
+        .main img {
+            max-width: 100%;
+            border: 4px solid #a0d6b4;
+            border-radius: 20px;
+            margin-top: 40px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .main p {
+            font-size: 20px;
+            color: #333;
+            margin-top: 10px;
+            text-align: center;
+            line-height: 1.6;
+        }
+
+        footer {
+            clear: both;
+            padding: 20px;
+            text-align: center;
+            font-size: 24px;
+            background-color: greenyellow;
+            color: black;
+        }
+
+        .clearfix::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+
+        @media screen and (max-width: 768px) {
+            .logo, nav {
+                float: none;
+                text-align: center;
+            }
+
+            nav a {
+                display: block;
+                margin: 8px 0;
+            }
+
+            aside, .main {
+                float: none;
+                width: 100%;
+                text-align: center;
+                min-height: auto;
+                height: auto;
+            }
+
+            .photo-box {
+                width: 100%;
+                float: none;
+                margin: 20px 0 0 0;
+                padding: 0;
+            }
+
+            .photo-box img {
+                height: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">모코코와 함께해!</div>
+        <nav>
+            <a href="index.html">메인 페이지</a>
+            <a href="mococo_emoji1.html">모코코 이모티콘</a>
+            <a href="mococo_goods1.html">모코코 굿즈</a>
+            <a href="mococo_popup1.html">모코코 팝업 스토어</a>
+            <a href="mococo_colabo1.html">모코코 콜라보</a>
+            <a href="mococo_memo.html">모코코 메모장</a>
+        </nav>
+    </header>
+
+    <div class="content clearfix">
+        <aside>
+            <h2>팝업 스토어 사진첩</h2>
+            <ul>
+                <li><a href="mococo_popup1.html">부산 팝업 스토어</a></li>
+                <li><a href="mococo_popup2.html">더 현대 팝업 스토어</a></li>
+            </ul>
+        </aside>
+
+        <div class="main clearfix">
+            <h1>모코코 팝업 스토어에 오신 걸 환영합니다!</h1>
+            <h2>📸 팝업스토어 현장 사진 모음</h2>            
+            <img src="img/seoul_popup/seoul_popup_banner.png" alt="대표 이미지">
+
+            <div class="photo-album clearfix">
+                <div class="photo-box">
+                    <a href="mococo_popup2-1.html"><img src="img/seoul_popup/gallery1.jpg" alt="팝업 사진1"></a>
+                </div>
+                <div class="photo-box">
+                    <a href="mococo_popup2-2.html"><img src="img/seoul_popup/gallery2.jpg" alt="팝업 사진2"></a>
+                </div>
+                <div class="photo-box">
+                    <a href="mococo_popup2-3.html"><img src="img/seoul_popup/gallery3.jpg" alt="팝업 사진3"></a>
+                </div>
+                <div class="photo-box">
+                    <a href="mococo_popup2-4.html"><img src="img/seoul_popup/gallery4.jpg" alt="팝업 사진4"></a>
+                </div>
+            </div>
+
+            <p>
+                전국 각지에서 진행 중인 모코코 팝업 스토어!<br>
+                한정판 굿즈부터 다양한 체험 부스까지!<br><br>
+                💚 놓치면 아쉬운 찬스! 지금 바로 모코코와 함께 하세요!
+            </p>
+        </div>
+    </div>
+
+    <footer>
+        ⓒ 2025 모코코 월드. All rights reserved.
+    </footer>
+</body>
+</html>

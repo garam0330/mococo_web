@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .clear {
+            clear: both;
+        }
+
+        body {
+            font-family: "배달의민족 주아";
+            padding: 10px;
+            background-color: #E0F7EC;
+            color: #333333;
+        }
+
+        header {
+            background-color: greenyellow;
+            padding: 20px;
+            overflow: hidden;
+        }
+
+        .logo {
+            float: left;
+            font-size: 30px;
+            color: black;
+        }
+
+        nav {
+            float: right;
+        }
+
+        nav a {
+            display: inline-block;
+            color: black;
+            font-size: 18px;
+            text-decoration: none;
+            padding: 10px 20px;
+            margin: 0 5px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        nav a:hover {
+            background-color: #E0F7EC;
+        }
+
+        .content {
+            overflow: hidden;
+            background-color: #E0F7EC;
+        }
+
+        .main-area {
+            float: right;
+            width: calc(100% - 200px);
+            background-color: greenyellow;
+        }
+
+        .banner {
+            padding: 20px;
+            background-color: white;
+        }
+
+        .banner img {
+            display: block;
+            width: 1000px;
+            height: auto;
+            margin: 0 auto;
+            padding: 5px;
+        }
+
+        .description {
+            width: 100%;
+            padding: 20px;
+            background-color: #ffffff;
+            overflow: hidden;
+        }
+
+        .card {
+            float: left;
+            width: 48%;
+            margin-right: 4%;
+            height: 450px;
+            background-color: #FFFDF7;
+            padding: 20px;
+            border: 1px solid #A0E57C;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        }
+
+        .card:last-child {
+            margin-right: 0;
+        }
+
+        .card h3 {
+            font-size: 22px;
+            font-weight: normal;
+            margin-top: 0;
+            color: #4CAF50;
+        }
+
+        .card p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        .card-icon {
+            width: 180px;
+            height: auto;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        aside {
+            float: left;
+            width: 200px;
+            height: auto;
+            background-color: #4CAF50;
+            padding: 20px;
+            color: white;
+        }
+
+        aside h2 {
+            font-size: 20px;
+            margin-bottom: 40px;
+            font-weight: normal;
+        }
+
+        aside ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        aside ul li {
+            margin-bottom: 15px;
+        }
+
+        aside ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 16px;
+            display: block;
+            padding: 8px 10px;
+            border-radius: 4px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        aside ul li a:hover {
+            background-color: #45a049;
+            color: #fff;
+        }
+
+        .main-area, aside {
+            min-height: 920px;
+        }
+
+        footer {
+            padding: 20px;
+            text-align: center;
+            font-size: 24px;
+            background-color: greenyellow;
+            color: black;
+            margin-top: 0;
+        }
+
+        @media screen and (max-width: 768px) {
+            .logo, nav, .main-area, aside, .banner, .description, .card {
+                float: none;
+                width: 100%;
+            }
+
+            .content, aside {
+                min-height: auto;
+            }
+
+            .logo {
+                text-align: center;
+                display: block;
+                margin-bottom: 10px;
+            }
+
+            nav {
+                margin-top: 10px;
+                clear: both;
+            }
+
+            nav a {
+                display: block;
+                margin: 8px 0;
+                text-align: center;
+            }
+
+            aside {
+                text-align: center;
+                height: auto;
+            }
+
+            .banner img {
+                width: 100%;
+                float: none;
+            }
+
+            .description, .card {
+                margin-right: 0;
+                margin-bottom: 20px;
+            }
+        }
+        
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            모코코와 함께해!
+        </div>
+
+        <nav>
+            <a href="index.html">메인 페이지</a>
+            <a href="mococo_emoji1.html">모코코 이모티콘</a>
+            <a href="mococo_goods1.html">모코코 굿즈</a>
+            <a href="mococo_popup1.html">모코코 팝업 스토어</a>
+            <a href="mococo_colabo1.html">모코코 콜라보</a>
+            <a href="mococo_memo.html">모코코 메모장</a>
+        </nav>
+    </header>
+
+    <div class="content">
+        <aside>
+            <h2>메뉴</h2>
+            <ul>
+                <li><a href="mococo_emoji1.html">모코코 이모티콘</a></li>
+                <li><a href="mococo_goods1.html">모코코 굿즈</a></li>
+                <li><a href="mococo_popup.html">팝업 스토어</a></li>
+                <li><a href="mococo_colabo.html">모코코 콜라보</a></li>
+                <li><a href="mococo_memo.html">모코코 메모장</a></li>
+            </ul>
+        </aside>
+
+        <div class="main-area">
+            <div class="banner">
+                <img src="img/main/banner.jpg" alt="배너">
+                <div class="clear"></div>
+            </div>
+
+            <div class="description">
+                <div class="card">
+                    <img src="img/main/mococo-icon1.png" alt="모코코" class="card-icon">
+                    <h3>모코코란?</h3>
+                    <p>모코코는 로스트아크 게임에서 만들어진 귀엽고 작은 존재로, 이 게임을 플레이 하는 이들 뿐만 아니라 많은 이들의 사랑을 받고 있는 캐릭터입니다. 특유의 초록색을 기반으로 한 귀여운 이미지와 아기자기한 사운드는 많은 사람들에게 인기를 끌고 있습니다.</p>
+                </div>
+
+                <div class="card">
+                    <img src="img/main/mococo-icon2.png" alt="모코코" class="card-icon">
+                    <h3>이 웹사이트는?</h3>
+                    <p>모모코는 많은 이모티콘으로 제작됐을 뿐만 아니라 관련 굿즈나 이벤트 역시 많은 캐릭터입니다. 이 웹페이지는 모코코 관련 굿즈, 이모티콘, 팝업스토어 정보를 제공합니다. 귀여움 가득한 세상을 만나보세요!</p>
+                </div>
+            </div>
+        </div>
+
+         <div class="clear"></div>
+    </div>
+
+    <footer>
+        ⓒ 2025 모코코 월드. All rights reserved.
+    </footer>
+</body>
+</html>

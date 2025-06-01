@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "배달의민족 주아";
+            background-color: #E0F7EC;
+            margin: 0;
+            padding: 10px;
+        }
+
+        header {
+            background-color: greenyellow;
+            padding: 20px;
+            overflow: hidden;
+        }
+
+        .logo {
+            float: left;
+            font-size: 30px;
+            color: black;
+            font-weight: bold;
+        }
+
+        nav {
+            float: right;
+        }
+
+        nav a {
+            display: inline-block;
+            color: black;
+            font-size: 18px;
+            text-decoration: none;
+            padding: 10px 20px;
+            margin: 0 5px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        nav a:hover {
+            background-color: #DFF5DF;
+        }
+
+        .content {
+            overflow: hidden;
+            background-color: #E0F7EC;
+        }
+
+        aside {
+            float: left;
+            width: 400px;
+            background-color: #4CAF50;
+            padding: 20px;
+            color: white;
+        }
+
+        aside h2 {
+            font-size: 20px;
+            margin-bottom: 40px;
+            font-weight: normal;
+        }
+
+        .brand-logo {
+            margin-bottom: 30px;
+            padding: 0;
+            text-align: center;
+            border-radius: 12px;
+        }
+
+        .brand-logo img {
+            width: 100%;
+            height: auto;
+            border-radius: 12px;
+            border: 3px solid #92E28F;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .brand-logo img:hover {
+            transform: scale(1.03);
+        }
+
+
+        .main {
+            float: right;
+            width: calc(100% - 400px);
+            background-color: #f0fff8;
+            padding: 40px;
+        }
+
+        .main, aside {
+            min-height: 900px;
+        }
+
+        .collab-banner {
+            width: 100%;
+            height: 500px;
+            line-height: 300px;
+            text-align: center;
+            font-size: 22px;
+            font-weight: bold;
+            border-radius: 16px;
+            margin-bottom: 40px;
+            color: black;
+        }
+
+        .collab-banner img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 16px;
+        }
+
+        .collab-goods {
+            margin-top: 40px;
+            overflow: hidden;
+            background-color: #ffffff;
+            border-radius: 16px;
+            padding: 10px 0;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        .goods-left,.goods-right {
+            min-height: 250px;
+            background-color: #ffffff;
+        }
+
+        .goods-left {
+            float: left;
+            width: 45%;
+            margin-right: 5%;
+        }
+
+        .goods-left img {
+            width: 100%;
+            border-radius: 12px;
+            border: 3px solid #5EC260;
+        }
+
+        .goods-right {
+            float: left;
+            width: 45%;
+            padding: 20px;
+            border-radius: 12px;
+            color: #333;
+            text-align: left;
+        }
+
+        .goods-right p {
+            margin: 0;
+            font-size: 18px;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        footer {
+            clear: both;
+            padding: 20px;
+            text-align: center;
+            font-size: 24px;
+            background-color: greenyellow;
+            color: black;
+        }
+
+        @media screen and (max-width: 768px) {
+            .logo, nav {
+                float: none;
+                text-align: center;
+            }
+
+            nav a {
+                display: block;
+                margin: 8px 0;
+            }
+
+            aside, .main {
+                float: none;
+                width: 100%;
+                text-align: center;
+                min-height: auto;
+                height: auto;
+            }
+
+            .collab-banner {
+                margin-bottom: 8px
+            }
+
+            .collab-goods {
+                margin-top: 8px
+            }
+
+            .collab-banner img, .collab-goods img {
+                width: 100%;
+                height: auto;
+            }
+
+            .brand-logo {
+                display: inline-block;
+                width: 80%;
+            }
+
+            .goods-left,.goods-right {
+                box-sizing: border-box;
+                float: none;
+                clear: both;
+                width: 100%;
+            }
+
+            .goods-right {
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">모코코와 함께해!</div>
+        <nav>
+            <a href="index.html">메인 페이지</a>
+            <a href="mococo_emoji1.html">모코코 이모티콘</a>
+            <a href="mococo_goods1.html">모코코 굿즈</a>
+            <a href="mococo_popup1.html">모코코 팝업 스토어</a>
+            <a href="mococo_colabo1.html">모코코 콜라보</a>
+            <a href="mococo_memo.html">모코코 메모장</a>
+        </nav>
+    </header>
+
+    <div class="content clearfix">
+        <aside>
+            <h2>콜라보 브랜드</h2>
+            <div class="brand-logo">
+                <a href="mococo_colabo1.html"><img src="img/colabo/brand1.png" alt="Domino's Pizza"></a>
+            </div>
+            <div class="brand-logo">
+                <a href="mococo_colabo2.html"><img src="img/colabo/brand2.png" alt="Knotted"></a>
+            </div>
+            <div class="brand-logo">
+                <a href="mococo_colabo3.html"><img src="img/colabo/brand3.png" alt="Mom's Touch"></a>
+            </div>
+        </aside>
+
+        <div class="main">
+            <div class="collab-banner">
+                <img src="img/colabo/domino_banner.jpg" alt="도미노 피자 콜라보 배너 이미지">
+            </div>
+
+            <div class="collab-goods clearfix">
+                <div class="goods-left">
+                    <img src="img/colabo/domino_goods.jpg" alt="도미노 피자 콜라보 굿즈 이미지">
+                </div>
+
+                <div class="goods-right">
+                    <p>
+                        도미노 X 모코코 콜라보!<br>
+                        피자 세트와 모코코 피규어를 함께 만나보세요! 💚<br>
+                        전국 한정 수량! 지금 가까운 매장에서 만나보세요!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        ⓒ 2025 모코코 월드. All rights reserved.
+    </footer>
+</body>
+</html>

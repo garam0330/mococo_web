@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .clear {
+            clear: both;
+        }
+
+        body {
+            font-family: "배달의민족 주아";
+            padding: 10px;
+            background-color: #E0F7EC;
+            color: #333;
+        }
+
+        header {
+            background-color: greenyellow;
+            padding: 20px;
+            overflow: hidden;
+        }
+
+        .logo {
+            float: left;
+            font-size: 30px;
+            color: black;
+        }
+
+        nav {
+            float: right;
+        }
+
+        nav a {
+            display: inline-block;
+            color: black;
+            font-size: 18px;
+            text-decoration: none;
+            padding: 10px 20px;
+            margin: 0 5px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        nav a:hover {
+            background-color: #E0F7EC;
+        }
+
+        .content {
+            overflow: hidden;
+            background-color: #E0F7EC;
+        }
+
+        aside {
+            float: left;
+            width: 200px;
+            background-color: #4CAF50;
+            padding: 20px;
+            color: white;
+        }
+
+        aside h2 {
+            font-size: 20px;
+            margin-bottom: 30px;
+        }
+
+        aside ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        aside ul li {
+            margin-bottom: 15px;
+        }
+
+        aside ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 16px;
+            display: block;
+            padding: 8px 10px;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+
+        aside ul li a:hover {
+            background-color: #45a049;
+        }
+
+        .main-area {
+            float: right;
+            width: calc(100% - 200px);
+            padding: 40px;
+            background-color: #F0FFF8;
+        }
+
+        aside, .main-area {
+            min-height: 900px;
+        }
+
+        .note-container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 12px;
+            max-width: 800px;
+            margin: 0 auto;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .note-container h2 {
+            margin-top: 0;
+            font-size: 24px;
+            color: #4CAF50;
+        }
+
+        textarea {
+            width: 100%;
+            height: 650px;
+            padding: 15px;
+            font-size: 16px;
+            border-radius: 10px;
+            border: 1px solid #A0E57C;
+            background-color: #F4FDEB;
+            resize: vertical;
+        }
+
+        .btn-group {
+            margin-top: 15px;
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .btn-group button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: greenyellow;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .btn-group button:hover {
+            background-color: #CDEB7D;
+        }
+
+        footer {
+            clear: both;
+            padding: 20px;
+            text-align: center;
+            font-size: 24px;
+            background-color: greenyellow;
+            color: black;
+        }
+
+        @media screen and (max-width: 768px) {
+            .logo, nav, .main-area, aside {
+                float: none;
+                width: 100%;
+            }
+
+            .logo {
+                text-align: center;
+            }
+
+            nav a {
+                display: block;
+                text-align: center;
+                margin: 8px 0;
+            }
+
+            aside {
+                float: none;
+                width: 100%;
+                text-align: center;
+                min-height: auto;
+                height: auto;
+            }
+
+            .note-container {
+                width: 90%;
+            }
+
+            .btn-group {
+                flex-direction: column;
+                align-items: stretch;
+            }
+        }
+  </style>
+  <title>모코코 메모장</title>
+</head>
+<body>
+    <header>
+        <div class="logo">모코코와 함께해!</div>
+        <nav>
+            <a href="index.html">메인 페이지</a>
+            <a href="mococo_emoji1.html">모코코 이모티콘</a>
+            <a href="mococo_goods1.html">모코코 굿즈</a>
+            <a href="mococo_popup1.html">모코코 팝업 스토어</a>
+            <a href="mococo_colabo1.html">모코코 콜라보</a>
+            <a href="mococo_memo.html">모코코 메모장</a>
+        </nav>
+    </header>
+
+    <div class="content">
+        <aside>
+        <h2>메모장 메뉴</h2>
+        <ul>
+            <li><a href="mococo_memo.html">모코코 메모장</a></li>
+            <li><a href="mococo_memo_list.html">내 메모 보기</a></li>
+        </ul>
+        </aside>
+
+        <div class="main-area">
+            <div class="note-container">
+                <h2>🌿 오늘의 모코코 메모</h2>
+                <textarea id="memoBox" placeholder="모코코와의 오늘을 기록해보세요..."></textarea>
+                <div class="btn-group">
+                    <button onclick="saveMemo()">저장하기</button>
+                    <button onclick="loadMemo()">불러오기</button>
+                    <button onclick="clearMemo()">전체 지우기</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="clear"></div>
+    </div>
+
+    <footer>
+        ⓒ 2025 모코코 월드. All rights reserved.
+    </footer>
+
+    <script>
+        function saveMemo() {
+            const textarea = document.getElementById("memoBox");
+            const text = textarea.value.trim();
+            if (text === "") {
+                alert("메모 내용을 입력해주세요.");
+                return;
+            }
+
+            const timestamp = new Date().toLocaleString();
+            const memoItem = { text, timestamp };
+
+            let memoList = JSON.parse(localStorage.getItem("memoList") || "[]");
+            memoList.push(memoItem);
+            localStorage.setItem("memoList", JSON.stringify(memoList));
+
+            alert("메모가 저장되었습니다!");
+            textarea.value = "";
+        }
+
+        function loadMemo() {
+            const memoList = JSON.parse(localStorage.getItem("memoList") || "[]");
+            if (memoList.length > 0) {
+                const lastMemo = memoList[memoList.length - 1];
+                document.getElementById("memoBox").value = lastMemo.text;
+                alert("가장 최근 메모를 불러왔습니다.");
+            }
+            else {
+                alert("저장된 메모가 없습니다.");
+            }
+        }
+
+        function clearMemo() {
+            if (confirm("전체 메모를 모두 삭제하시겠습니까?")) {
+                localStorage.removeItem("memoList");
+                document.getElementById("memoBox").value = "";
+                alert("모든 메모가 삭제되었습니다.");
+            }
+        }
+    </script>
+</body>
+</html>

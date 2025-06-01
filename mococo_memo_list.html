@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .clear {
+            clear: both;
+        }
+
+        body {
+            font-family: "배달의민족 주아";
+            padding: 10px;
+            background-color: #E0F7EC;
+            color: #333;
+        }
+
+        header {
+            background-color: greenyellow;
+            padding: 20px;
+            overflow: hidden;
+        }
+
+        .logo {
+            float: left;
+            font-size: 30px;
+            color: black;
+        }
+
+        nav {
+            float: right;
+        }
+
+        nav a {
+            display: inline-block;
+            color: black;
+            font-size: 18px;
+            text-decoration: none;
+            padding: 10px 20px;
+            margin: 0 5px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        nav a:hover {
+            background-color: #E0F7EC;
+        }
+
+        .content {
+            overflow: hidden;
+            background-color: #E0F7EC;
+        }
+
+        aside {
+            float: left;
+            width: 200px;
+            background-color: #4CAF50;
+            padding: 20px;
+            color: white;
+        }
+
+        aside h2 {
+            font-size: 20px;
+            margin-bottom: 30px;
+        }
+
+        aside ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        aside ul li {
+            margin-bottom: 15px;
+        }
+
+        aside ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 16px;
+            display: block;
+            padding: 8px 10px;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+
+        aside ul li a:hover {
+            background-color: #45a049;
+        }
+
+        .main-area {
+            float: right;
+            width: calc(100% - 200px);
+            padding: 40px;
+            background-color: #F0FFF8;
+        }
+
+        aside, .main-area {
+            min-height: 900px;
+        }
+
+        .memo-item {
+            background-color: white;
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 20px;
+            box-shadow: 0 0 5px rgba(0,0,0,0.1);
+        }
+
+        .memo-item button {
+            margin-top: 10px;
+            background-color: #FF6B6B;
+            color: white;
+            border: none;
+            padding: 6px 14px;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        .memo-item button:hover {
+            background-color: #e74c3c;
+        }
+
+        .memo-display {
+            background-color: white;
+            padding: 20px;
+            border-radius: 12px;
+            max-width: 800px;
+            margin: 0 auto;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            white-space: pre-wrap;
+            font-size: 16px;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .memo-display h2 {
+            margin-top: 0;
+            font-size: 24px;
+            color: #4CAF50;
+        }
+
+        footer {
+            clear: both;
+            padding: 20px;
+            text-align: center;
+            font-size: 24px;
+            background-color: greenyellow;
+            color: black;
+        }
+
+        @media screen and (max-width: 768px) {
+            .logo, nav, .main-area, aside {
+                float: none;
+                width: 100%;
+            }
+
+            .logo {
+                text-align: center;
+            }
+
+            nav a {
+                display: block;
+                text-align: center;
+                margin: 8px 0;
+            }
+
+            aside {
+                float: none;
+                width: 100%;
+                text-align: center;
+                min-height: auto;
+                height: auto;
+            }
+
+            .memo-display {
+                width: 90%;
+            }
+        }
+  </style>
+  <title>내 모코코 메모 보기</title>
+</head>
+<body>
+    <header>
+        <div class="logo">모코코와 함께해!</div>
+        <nav>
+            <a href="index.html">메인 페이지</a>
+            <a href="mococo_emoji1.html">모코코 이모티콘</a>
+            <a href="mococo_goods1.html">모코코 굿즈</a>
+            <a href="mococo_popup1.html">모코코 팝업 스토어</a>
+            <a href="mococo_colabo1.html">모코코 콜라보</a>
+            <a href="mococo_memo.html">모코코 메모장</a>
+        </nav>
+    </header>
+
+    <div class="content">
+        <aside>
+            <h2>메모장 메뉴</h2>
+            <ul>
+                <li><a href="mococo_memo.html">모코코 메모장</a></li>
+                <li><a href="mococo_memo_list.html">내 메모 보기</a></li>
+            </ul>
+        </aside>
+
+        <div class="main-area">
+            <div id="memoList">
+                <div class="memo-display">
+                    <h2>📝 저장된 메모</h2>
+                    <div id="savedMemo">로딩 중...</div>
+                </div>
+            </div>
+        </div>
+        <div class="clear"></div>
+    </div>
+
+    <footer>
+        ⓒ 2025 모코코 월드. All rights reserved.
+    </footer>
+
+    <script>
+        function renderMemoList() {
+            const container = document.getElementById("memoList");
+            container.innerHTML = "";
+            const memoList = JSON.parse(localStorage.getItem("memoList") || "[]");
+
+            if (memoList.length === 0) {
+                container.innerHTML = "<p>저장된 메모가 없습니다.</p>";
+                return;
+            }
+
+            memoList.forEach((memo, index) => {
+            const memoBox = document.createElement("div");
+            memoBox.className = "memo-item";
+            memoBox.innerHTML = `
+                <p><strong>${memo.timestamp}</strong></p>
+                <p>${memo.text.replace(/\n/g, "<br>")}</p>
+                <button onclick="deleteMemo(${index})">삭제</button>
+            `;
+            container.appendChild(memoBox);
+            });
+        }
+
+        function deleteMemo(index) {
+            if (confirm("이 메모를 삭제하시겠습니까?")) {
+                let memoList = JSON.parse(localStorage.getItem("memoList") || "[]");
+                memoList.splice(index, 1);
+                localStorage.setItem("memoList", JSON.stringify(memoList));
+                renderMemoList();
+            }
+        }
+
+        window.onload = renderMemoList;
+    </script>
+</body>
+</html>
